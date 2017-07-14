@@ -4,7 +4,7 @@ GA tuan tu tren CPU
 	Developer : Le Thanh Tan
 				Chiem Thach Phat
 */
-
+#pragma offload_attribute(push, target(mic))
 #include <fstream>
 #include <iostream>
 #include <sys/time.h>
@@ -13,6 +13,7 @@ GA tuan tu tren CPU
 #include <sstream>
 #include <algorithm>
 #include <omp.h>
+#pragma offload_attribute(pop) 
 
 using namespace std;
 
@@ -78,6 +79,7 @@ using namespace std;
 #define REUSE alloc_if(0) free_if(0)
 
 //-----------------------------sort field------------------------------
+#pragma offload_attribute(push, target(mic))
 class keySortLess { 
 public: 
   int key;
@@ -107,7 +109,6 @@ void sort_by_key_less(int * keyarray, int numsize, int* valuearray) {
 	}
 	delete [] dataSort;
 }
-
 void sort_by_key_greater(float * keyarray, int numsize, int* valuearray) {
 	keySortGreater *dataSort = new keySortGreater[numsize];
 	for (int i = 0; i< numsize; i++ ) {
@@ -121,10 +122,11 @@ void sort_by_key_greater(float * keyarray, int numsize, int* valuearray) {
 	}
 	delete [] dataSort;
 }
+#pragma offload_attribute(pop) 
 //---------------------------------------------------------------------
 
 class Tasks {
-private :
+public :
 	int * cost;			// time need to complete task
 	int * start_time;	// 
 	int * ncore;		// number of required cpu cores for this task
@@ -178,7 +180,7 @@ public :
 	void createTask(int, int, int, int, int, int, int, int);
 };
 class Machines {
-private :
+public :
 	int * mipsPerCore;	// maximum of MIPS in each cpu core of this machine
 	int * cores;		// maximum of cpu cores in this machine
 	int nMachine;		// real number of machines
@@ -246,7 +248,7 @@ public :
 };
 
 class Population {
-private :
+private:
 	int * mang_NST;			// set of NSTs
 	float * mang_fitness;		// do tuong thich
 	int * mang_makespan;		// thoi gian hoan thanh solution
@@ -259,10 +261,10 @@ private :
 	void parseValue(string, bool);
 	void extractField(float*, bool);
 
-	void evalNST(int*, float*, int* , int*);
-	void cross_over(int*);
-	void selection(int*, float*);
-	void mutan(int*);
+    __attribute__ ((target (mic))) void cross_over(int*, int*);    
+    __attribute__ ((target (mic))) void evalNST(int *, float*, int*, int*, int*, int*, int*, int*, int*, int*);
+	__attribute__ ((target (mic))) void selection(int*, float*, int*, float*, int*);
+	__attribute__ ((target (mic))) void mutan(int*);
 	
 public:
 	Population() {
@@ -354,32 +356,38 @@ int my_host_rand (int s, int d) {
 
 void Population::host_init_NST () {
 
-	mang_fitness = new float[sizePop];
-	mang_makespan = new int[sizePop];
-	rankings = new int[2*sizePop];
+	this->mang_fitness = new float[sizePop];
+	this->mang_makespan = new int[sizePop];
+	this->rankings = new int[2*sizePop];
 	
 // Allocate the host input array 
-	mang_NST = new int[numTask*sizePop];
-	if (mang_NST == NULL )
+	this->mang_NST = new int[numTask*sizePop];
+	if (this->mang_NST == NULL )
     {
         fprintf(stderr, "Failed to allocate host vectors!\n");
         exit(EXIT_FAILURE);
     }
-// Launch  init
-	cout<<"Begin init random NSTs\n";
-	#pragma offload target(mic:0) \
-	inout(mang_NST : length(sizePop) ALLOC) \
-	inout(mang_fitness : length(sizePop) ALLOC) 
-	{
-		#pragma omp parallel for simd
-		for (int i = 0; i < numTask*sizePop; i++ ) {
-			mang_NST[i] = my_host_rand(0, numMachine-1);
-		}
-	}
-	cout<<"Creating NSTs done\n";
+
+    cout<<"Begin init random NSTs\n";
+    int *mang_NST = this->mang_NST; 
+    #pragma offload target(mic: 0) inout(mang_NST : length(numTask*sizePop))
+    {   
+        #pragma omp parallel for simd
+        for (int i = 0; i < numTask*sizePop; i++ ) { 
+            mang_NST[i] = my_host_rand(0, numMachine-1);
+        }   
+    }   
+    cout<<"Creating NSTs done\n";
+    
+    /*  Test result NST
+    for (int i = 0; i < 10; i++ ) {
+        cout << mang_NST[i] << endl ;
+    }
+    */                      
+    
 }
 
-void Population::cross_over(int* NSToffspring) {
+void Population::cross_over(int* NSToffspring, int *mang_NST) {
 	for ( int i=0 ; i<sizePop ; i++){
 		int cross_point = my_host_rand( 0, numTask - numTask/2);
 		int neighbor = my_host_rand( 0, sizePop - 1 );
@@ -399,7 +407,7 @@ void Population::mutan ( int* NSToffspring) {
 	}
 }
 
-void Population::selection(int* NSToffspring, float* fitness_offspring) {
+void Population::selection(int* NSToffspring, float* fitness_offspring, int *mang_NST, float *mang_fitness, int *rankings) {
 // reset rankings 
 	for( int i= 0; i < 2*sizePop; i++) {rankings[i] = i;}
 // copy key sort 
@@ -433,6 +441,17 @@ void Population::GA_Evolution(int galoop) {
         fprintf(stderr, "so the he khong hop le\n");
         exit(EXIT_FAILURE);
     }
+
+// bring pointers to local to offload to MIC
+    int *mang_NST = this->mang_NST;
+    float * mang_fitness = this->mang_fitness;
+    int *rankings = this->rankings;
+    int *ncore = dataT->ncore;
+    int *nmips = dataT->nmips;
+    int * mipsPerCore = dataM->mipsPerCore;
+    int * cores = dataM->cores;
+    int * maxPower = dataM->maxPower;
+    int * basePower = dataM->basePower;
 // offspring
 	int NSToffspring [numTask*sizePop];
 	float fitness_offspring[sizePop];
@@ -451,30 +470,63 @@ void Population::GA_Evolution(int galoop) {
 	sort_by_key_less(endList, numTask, endList + numTask);
 	cout<<"Event list were created"<<endl;
 
-// call eval funtion for parents
-	evalNST(mang_NST, mang_fitness, startList, endList);
-	// clone fitness
+    // call eval funtion for parent
+    #pragma offload target(mic: 0) in(mang_NST : length(numTask*sizePop) ALLOC)\
+    inout(mang_fitness : length(sizePop) ALLOC) \
+    in(rankings : length(2*sizePop) ALLOC) \
+    in(startList ) in(endList ) \
+    in(ncore : length(numTask) ALLOC) \
+    in(nmips : length(numTask) ALLOC) \
+    in(mipsPerCore : length(numMachine) ALLOC) \
+    in(cores : length(numMachine) ALLOC) \
+    in(maxPower : length(numMachine) ALLOC) \
+    in(basePower : length(numMachine) ALLOC)
+    {
+	    evalNST(mang_NST, mang_fitness, startList, endList, ncore, nmips, mipsPerCore, cores, maxPower, basePower);
+    }
+    // clone fitness
 	for (int i =0 ; i< sizePop ; i++) { fitness_offspring[i] = mang_fitness[i];}
-
 // begin ga 
 	clock_t t;
-	t = clock();
-	for (int g = 0; g < galoop; g++) {
-		// call lai_ghep
-		cross_over(NSToffspring);
-		// call eval for offspring
-		evalNST(NSToffspring, fitness_offspring, startList, endList);
-		// call chon loc sort
-		selection(NSToffspring, fitness_offspring);
-		// call dot bien
-		mutan(NSToffspring);
-		// call eval for offspring
-		evalNST(NSToffspring, fitness_offspring, startList, endList);
-		// call chon loc sort
-		selection(NSToffspring, fitness_offspring);
-		//
-		t = clock() - t;
-	}
+	//t = clock();
+    #pragma offload target(mic: 0) nocopy(mang_NST : length(numTask*sizePop) REUSE) \
+    nocopy(mang_fitness : length(sizePop) REUSE)\
+    nocopy(rankings : length(2*sizePop) REUSE) \
+    in(startList) in(endList) in(NSToffspring) in(fitness_offspring)\
+    nocopy(ncore : length(numTask) REUSE) \
+    nocopy(nmips : length(numTask) REUSE) \
+    nocopy(mipsPerCore : length(numMachine) REUSE) \
+    nocopy(cores : length(numMachine) REUSE) \
+    nocopy(maxPower : length(numMachine) REUSE) \
+    nocopy(basePower : length(numMachine) REUSE)
+    { 
+        for (int g = 0; g < galoop; g++) {
+            // call lai_ghep
+            cross_over(NSToffspring, mang_NST);
+        
+            // call eval for offspring
+            evalNST(NSToffspring, fitness_offspring, startList, endList, ncore, nmips, mipsPerCore, cores, maxPower, basePower);
+            // call chon loc sort
+            selection(NSToffspring, fitness_offspring, mang_NST, mang_fitness, rankings);
+            // call dot bien
+            mutan(NSToffspring);
+            // call eval for offspring
+            evalNST(NSToffspring, fitness_offspring, startList, endList, ncore, nmips, mipsPerCore, cores, maxPower, basePower);
+            // call chon loc sort
+            selection(NSToffspring, fitness_offspring, mang_NST, mang_fitness, rankings);
+        //	t = clock() - t;
+        }
+    }
+    #pragma offload target(mic: 0) out(mang_NST : length(numTask*sizePop) FREE) \
+    out(mang_fitness : length(sizePop) FREE)\
+    nocopy(rankings : length(2*sizePop) FREE) \
+    nocopy(ncore : length(numTask) FREE) \
+    nocopy(nmips : length(numTask) FREE) \
+    nocopy(mipsPerCore : length(numMachine) FREE) \
+    nocopy(cores : length(numMachine) FREE) \
+    nocopy(maxPower : length(numMachine) FREE) \
+    nocopy(basePower : length(numMachine) FREE)
+    {}
 }
 
 void Machines::host_init_Machine() {
@@ -666,9 +718,14 @@ void Population::printNST(char* ten_file, int *nst, float fitness) {
 		}
 		myfile.close();
 }
-
-void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eventEndList){
-	for (int i = 0; i <sizePop; i++ ) {
+/*
+void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eventEndList, 
+                                    int *ncore, int *nmips, int * mipsPerCore, int * cores, int * maxPower, int * basePower){
+*/
+void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eventEndList, 
+int* taskCore, int* taskMips, int* machineMipsPerCore, int* machineCore, int* machineMaxPower, int* machineBasePower){
+	#pragma omp parallel for
+    for (int i = 0; i <sizePop; i++ ) {
 		float power[numMachine], powerDatacenter = 0;
 		int mips[numMachine], cores[numMachine], times[numMachine];
 
@@ -692,17 +749,17 @@ void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eve
 			//case 1: started event begin sooner than ended event
 			if(startPtr != numTask && eventStartList[startPtr] <= eventEndList[endPtr]){
 				//Check condition, temp1 is mips after add new task, temp2 is total machine MIPS, temp3 is cores after add new task
-				int temp1 = mips[nst[i*numTask + eventStartList[startPtr+numTask]]] + dataT->getMips(eventStartList[startPtr+numTask]) * dataT->getCores(eventStartList[startPtr+numTask]);
-				int temp2 = dataM->getMipsPerCore(nst[i*numTask+eventStartList[startPtr+numTask]]) * dataM->getCores(nst[i*numTask+eventStartList[startPtr+numTask]]);
-				int temp3 = cores[nst[i*numTask + eventStartList[startPtr+numTask]]] + dataT->getCores(eventStartList[startPtr+numTask]);
-				if(temp1 > temp2 || temp3 > dataM->getCores(nst[i*numTask+eventStartList[startPtr+numTask]]) || dataT->getMips(eventStartList[startPtr+numTask]) > dataM->getMipsPerCore(nst[i*numTask+eventStartList[startPtr+numTask]])){
+				int temp1 = mips[nst[i*numTask + eventStartList[startPtr+numTask]]] + taskMips[eventStartList[startPtr+numTask]] * taskCore[eventStartList[startPtr+numTask]];
+				int temp2 = machineMipsPerCore[nst[i*numTask+eventStartList[startPtr+numTask]]] * machineCore[nst[i*numTask+eventStartList[startPtr+numTask]]];
+				int temp3 = cores[nst[i*numTask + eventStartList[startPtr+numTask]]] + taskCore[eventStartList[startPtr+numTask]];
+				if(temp1 > temp2 || temp3 > machineCore[nst[i*numTask+eventStartList[startPtr+numTask]]] || taskMips[eventStartList[startPtr+numTask]] > machineMipsPerCore[nst[i*numTask+eventStartList[startPtr+numTask]]]){
 					if(fitness[i] > 0) fitness[i] = 0;
 					fitness[i]--;
 					startPtr++;
 					continue;
 				}
 				
-				power[nst[i*numTask+eventStartList[startPtr+numTask]]] += (float)mips[nst[i*numTask + eventStartList[startPtr+numTask]]] / temp2 * (dataM->getMaxPower(nst[i*numTask+eventStartList[startPtr+numTask]]) - dataM->getBasePower(nst[i*numTask+eventStartList[startPtr+numTask]])) * (eventStartList[startPtr] - times[nst[i*numTask + eventStartList[startPtr+numTask]]]);
+				power[nst[i*numTask+eventStartList[startPtr+numTask]]] += (float)mips[nst[i*numTask + eventStartList[startPtr+numTask]]] / temp2 * (machineMaxPower[nst[i*numTask+eventStartList[startPtr+numTask]]] - machineBasePower[nst[i*numTask+eventStartList[startPtr+numTask]]]) * (eventStartList[startPtr] - times[nst[i*numTask + eventStartList[startPtr+numTask]]]);
 				times[nst[i*numTask+eventStartList[startPtr+numTask]]] = eventStartList[startPtr];
 				mips[nst[i*numTask + eventStartList[startPtr+numTask]]] = temp1;
 				cores[nst[i*numTask + eventStartList[startPtr+numTask]]] = temp3;
@@ -712,11 +769,11 @@ void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eve
 			//case 2: started event begin later than ended event
 			else if(startPtr == numTask || eventEndList[endPtr] < eventStartList[startPtr]){
 				//Check condition, temp1 is mips after remove old task, temp2 is total machine MIPS, temp3 is cores after remove old task
-				int temp1 = mips[nst[i*numTask + eventEndList[endPtr+numTask]]] - dataT->getMips(eventEndList[endPtr+numTask]) * dataT->getCores(eventEndList[endPtr+numTask]);
-				int temp2 = dataM->getMipsPerCore(nst[i*numTask+eventEndList[endPtr+numTask]]) * dataM->getCores(nst[i*numTask+eventEndList[endPtr+numTask]]);
-				int temp3 = cores[nst[i*numTask + eventEndList[endPtr+numTask]]] - dataT->getCores(eventEndList[endPtr+numTask]);
+				int temp1 = mips[nst[i*numTask + eventEndList[endPtr+numTask]]] - taskMips[eventEndList[endPtr+numTask]] * taskCore[eventEndList[endPtr+numTask]];
+				int temp2 = machineMipsPerCore[nst[i*numTask+eventEndList[endPtr+numTask]]] * machineCore[nst[i*numTask+eventEndList[endPtr+numTask]]];
+				int temp3 = cores[nst[i*numTask + eventEndList[endPtr+numTask]]] - taskCore[eventEndList[endPtr+numTask]];
 
-				power[nst[i*numTask+eventEndList[endPtr+numTask]]] += (float)mips[nst[i*numTask + eventEndList[endPtr+numTask]]] / temp2 * (dataM->getMaxPower(nst[i*numTask+eventEndList[endPtr+numTask]]) - dataM->getBasePower(nst[i*numTask+eventEndList[endPtr+numTask]])) * (eventEndList[endPtr] - times[nst[i*numTask + eventEndList[endPtr+numTask]]]);
+				power[nst[i*numTask+eventEndList[endPtr+numTask]]] += (float)mips[nst[i*numTask + eventEndList[endPtr+numTask]]] / temp2 * (machineMaxPower[nst[i*numTask+eventEndList[endPtr+numTask]]] - machineBasePower[nst[i*numTask+eventEndList[endPtr+numTask]]]) * (eventEndList[endPtr] - times[nst[i*numTask + eventEndList[endPtr+numTask]]]);
 				times[nst[i*numTask+eventEndList[endPtr+numTask]]] = eventEndList[endPtr];
 				mips[nst[i*numTask + eventEndList[endPtr+numTask]]] = temp1;
 				cores[nst[i*numTask + eventEndList[endPtr+numTask]]] = temp3;
@@ -728,10 +785,11 @@ void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eve
 		if(fitness[i] >= 0){
 			for(int j=0; j<numMachine; j++){
 				if(power[j] > 0)
-					powerDatacenter += dataM->getBasePower(j);
+					powerDatacenter += machineBasePower[j];
 				powerDatacenter += power[j];
 			}
-			fitness[i] = 0.5*2000000000/powerDatacenter;
+			fitness[i] = 1.0/powerDatacenter;
+            cout << "F " << fitness[i] << endl;
 		}
 	}
 }
@@ -819,6 +877,7 @@ void Population::extractField( float* fieldArray, bool type){
 int main() {
 	srand(time(NULL));
 	Population P;
+    
 	P.readFile("data.txt");
 	P.bestFit();
 

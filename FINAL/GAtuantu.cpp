@@ -364,6 +364,11 @@ void Population::host_init_NST () {
 		mang_NST[i] = my_host_rand(0, numMachine -1);
 	}
 	cout<<"Creating NSTs done\n";
+
+    for (int i = 0; i < 10; i++ ) {
+        cout << mang_NST[i] << endl ;
+    }
+
 }
 
 void Population::cross_over(int* NSToffspring) {
@@ -718,7 +723,8 @@ void Population::evalNST(int *nst, float* fitness, int* eventStartList, int* eve
 					powerDatacenter += dataM->getBasePower(j);
 				powerDatacenter += power[j];
 			}
-			fitness[i] = 0.5*2000000000/powerDatacenter;
+			fitness[i] = 1.0/powerDatacenter;
+            cout << "F " <<  fitness[i] << endl;
 		}
 	}
 }
