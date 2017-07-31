@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1024 -D generation=1000 -D rateMutan=0.005
 nvcc -o GA_GPU GAGPU.cu -D numMachine=500 -D numTask=500 -D sizePop=512 -D generation=100 -D rateMut=0.005
 
 
+=======
+
+Mutan rate = 0.005	
+
+Problem size	Population size	Generations	GPU Time(s) 	CPU+MIC Time(s)  	CPU(Xeon)	GPU Fitness					CPU+MIC Fitness/Bestfit	
+
+500x500			500				500			18.4686			19.3879				7.27823		4.6526e-09/4.65348e-09		4.65274e-09/4.65348e-09
+500x500			1000			1000		56.7299			76.7824			 	29.0832		4.65324e-09/4.65348e-09		4.65323e-09/4.65348e-09
+1000x1000		500				500			26.5905			38.1642			 	14.0048		2.05865e-09/2.06145e-09		2.05822e-09/2.06145e-09
+1000x1000		1000			1000		66.1401			152.312			 	55.6428		2.06125e-09/2.06145e-09		2.06127e-09/2.06145e-09
+>>>>>>> f00eb109c1ad1e5375b5d998f7a1cb9d8c839e87
