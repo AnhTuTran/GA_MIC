@@ -306,12 +306,14 @@ public:
 	}
 	void printBest(char* ten_file) {
 		// print to screen
+/*
 		cout<<"Simulation Results :\n";
 		cout<<"TaskID\tHostID\tTime\tFinish\tCores\n";
 		for (int i = 0; i < numTask; i++) {
 			cout << i << "\t" << mang_NST[i] << "\t" << dataT->getStartTime(i) <<"\t" 
 				 << dataT->getStartTime(i) + dataT->getDuration(i) << "\t" << dataT->getCores(i) << endl;
 		}
+*/
 		cout << "Total energy consumption (Watt-hour): " << 1/mang_fitness[0] << endl;
 		cout << "Fitness of ga solution: " << mang_fitness[0] << endl;
 
@@ -360,6 +362,9 @@ public:
 int my_host_rand (int s, int d) {
 	return rand() % (d-s+1) + s;
 }
+int my_parallel_rand (int s, int d) {
+    return int(lrand48()) % (d-s+1) + s;
+}
 #pragma offload_attribute(pop) 
 
 void Population::host_init_NST () {
@@ -380,9 +385,9 @@ void Population::host_init_NST () {
     int *mang_NST = this->mang_NST; 
     #pragma offload target(mic: 0) out(mang_NST : length(numTask*sizePop))
     {   
-        #pragma omp parallel for
+        #pragma omp parallel for simd
         for (int i = 0; i < numTask*sizePop; i++) { 
-            mang_NST[i] = my_host_rand(0, numMachine-1);
+            mang_NST[i] = my_parallel_rand(0, numMachine-1);
         }   
     }   
     cout << "Creating NSTs done\n";
@@ -396,10 +401,10 @@ void Population::host_init_NST () {
 }
 
 void Population::cross_over(int *NSToffspring, int *mang_NST) {
-    //3pragma omp parallel for
+    #pragma omp parallel for
 	for (int i = 0; i < sizePop; i++){
-		int cross_point = my_host_rand(0, numTask - numTask/2);
-		int neighbor 	= my_host_rand(0, sizePop - 1);
+		int cross_point = my_parallel_rand(0, numTask - numTask/2);
+		int neighbor 	= my_parallel_rand(0, sizePop - 1);
 		if (neighbor == i) {neighbor = (i+1)%sizePop;}
         #pragma omp simd
 		for (int p = 0; p < numTask/2 - 1; p++) {
@@ -409,10 +414,10 @@ void Population::cross_over(int *NSToffspring, int *mang_NST) {
 }
 
 void Population::mutan (int* NSToffspring) {
-    //#pragma omp simd // speedup from report < 1
+    #pragma omp parallel for simd // speedup from report < 1
 	for (int i = 0; i < numTask*sizePop; i++) {
-		if (((float)rand() / RAND_MAX) < rateMutan) {
-			NSToffspring[i] = my_host_rand(0, numMachine-1);
+		if (((float)lrand48() / RAND_MAX) < rateMutan) {
+			NSToffspring[i] = my_parallel_rand(0, numMachine-1);
 		}
 	}
 }
@@ -437,10 +442,12 @@ void Population::selection(int *NSToffspring, float *fitness_offspring, int *man
 	for (int i = 0; i < sizePop; i++) {
 		// copy to temNST
 		if (rankings[i] < sizePop) {
+            #pragma omp simd
 			for (int p = 0; p < numTask; p++) {
 				temNST[i * numTask + p] = mang_NST[rankings[i]*numTask +p];
 			}
 		} else {
+            #pragma omp simd
 			for (int p = 0; p < numTask; p++) {
 				temNST[i * numTask + p] = NSToffspring[(rankings[i] - sizePop) * numTask + p];
 			}	
@@ -485,7 +492,7 @@ void Population::GA_Evolution(int galoop) {
 // event list , create for eval
 	cout << "Begin create list\n";
 	int startList[numTask * 2], endList[numTask * 2];
-    #pragma omp parallel for
+    #pragma omp parallel for simd
 	for(int i = 0; i < numTask; i++){
 		startList[i] 		 = dataT->getStartTime(i);
 		endList[i + numTask] = startList[i + numTask] = i;
@@ -881,8 +888,8 @@ void Population::readFile (char *fname){
 	//End
 	
 	infile.close();
-	dataT->showTask();
-	dataM->showMachine();
+	//dataT->showTask();
+	//dataM->showMachine();
 }
 
 void Population::parseValue(string line, bool type){
@@ -950,6 +957,12 @@ int main() {
 
 int main() {
     srand(time(NULL));
+    srand48(time(NULL));
+#pragma omp parallel 
+{}
+    double avarage_time = 0;
+    int i, temp = 0;
+for (i = 0; i < 5; i++) {
     Population P;
     P.readFile("data.txt");
 
@@ -964,13 +977,17 @@ int main() {
     
     P.xuat_file("after_ga.txt");
     P.printBest("best_solution.txt");
+    //temp = P.mang_fitness[0];
     P.bestFit();
+    P.xuat_file("nst.txt");
     cout<<endl<<"total time run ga: "<< dTime2 - dTime1 << endl<<endl;
     cout << "Test parameters: machines " << numMachine << " tasks " << numTask 
          << " population size " << sizePop << " generations " << generation  
          << " Mutation rate: " << rateMutan << endl;
     
     cout<<"Done\n";
-    
+    avarage_time += dTime2 - dTime1;
+}
+    cout << "Avarage time: " << avarage_time/(i+1) << endl;
     return 0;
 }

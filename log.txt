@@ -1,0 +1,4 @@
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1024 -D generation=1000 -D rateMutan=0.005
+nvcc -o GA_GPU GAGPU.cu -D numMachine=500 -D numTask=500 -D sizePop=512 -D generation=100 -D rateMut=0.005
+
+

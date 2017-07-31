@@ -292,12 +292,14 @@ public:
 	}
 	void printBest(char* ten_file) {
 		// print to screen
+		/*
 		cout<<"Simulation Results :\n";
 		cout<<"TaskID	HostID	Time	Finish	Cores\n";
 		for (int i = 0; i< numTask ; i++ ) {
 			cout<<i<<"	" <<mang_NST[i]<<"	" <<dataT->getStartTime(i)<<"	" <<
 				dataT->getStartTime(i) + dataT->getDuration(i) <<"	"<<dataT->getCores(i)<<endl;
 		}
+        */
 		cout<<"Total energy consumption (Watt-hour): " <<1/mang_fitness[0] <<endl;
 		cout<<"Fitness of ga solution: "<< mang_fitness[0]<< endl;
 
@@ -623,6 +625,7 @@ void Population::bestFit(){
 			cout<< "Error : Can't write file bestfit.txt";
 			exit(EXIT_FAILURE);
 		}
+        cout << "Best fit solution: " << (float) fitness << endl;
 		myfile << fitness <<" - ";
 		for( int j = 0; j <numTask; j++) {
 			myfile << mang_NST[j] << " ";
@@ -764,8 +767,8 @@ void Population::readFile (char * fname){
 	//End
 	
 	infile.close();
-	dataT->showTask();
-	dataM->showMachine();
+	//dataT->showTask();
+	//dataM->showMachine();
 }
 
 void Population::parseValue(string line, bool type){
@@ -805,6 +808,7 @@ void Population::extractField( float* fieldArray, bool type){
  
 int main() {
 	srand(time(NULL));
+for (int i = 0; i < 5; i++) {
 	Population P;
 	P.readFile("data.txt");
 	P.bestFit();
@@ -823,7 +827,14 @@ int main() {
 	P.xuat_file("after_ga.txt");
 	P.printBest("best_solution.txt");
 	cout<<endl<<"total time run ga: "<< dTime2 - dTime1 << endl<<endl;
+    cout << "Test parameters: machines " << numMachine << " tasks " << numTask
+         << " population size " << sizePop << " generations " << generation
+         << " Mutation rate: " << rateMutan << endl;
 	cout<<"Done\n";
-	
+}
 	return 0;
 }
+
+
+
+
