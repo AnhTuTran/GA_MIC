@@ -808,7 +808,9 @@ void Population::extractField( float* fieldArray, bool type){
  
 int main() {
 	srand(time(NULL));
-for (int i = 0; i < 5; i++) {
+    double avarage_time = 0;
+    int i;
+for (i = 0; i < 5; i++) {
 	Population P;
 	P.readFile("data.txt");
 	P.bestFit();
@@ -831,7 +833,9 @@ for (int i = 0; i < 5; i++) {
          << " population size " << sizePop << " generations " << generation
          << " Mutation rate: " << rateMutan << endl;
 	cout<<"Done\n";
+    avarage_time += dTime2 - dTime1;
 }
+    cout << "Avarage time: " << avarage_time/(i) << endl;
 	return 0;
 }
 

@@ -363,7 +363,7 @@ int my_host_rand (int s, int d) {
 	return rand() % (d-s+1) + s;
 }
 int my_parallel_rand (int s, int d) {
-    return int(lrand48()) % (d-s+1) + s;
+    return (lrand48()) % (d-s+1) + s;
 }
 #pragma offload_attribute(pop) 
 
@@ -383,13 +383,23 @@ void Population::host_init_NST () {
 
     cout << "Begin init random NSTs\n";
     int *mang_NST = this->mang_NST; 
-    #pragma offload target(mic: 0) out(mang_NST : length(numTask*sizePop))
+    #pragma offload target(mic) out(mang_NST : length(numTask*sizePop))
     {   
         #pragma omp parallel for simd
         for (int i = 0; i < numTask*sizePop; i++) { 
             mang_NST[i] = my_parallel_rand(0, numMachine-1);
         }   
-    }   
+    }
+    
+    /* Test random
+    for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < numTask; i++) {
+            cout << mang_NST[i + j*numTask] << ' ';
+        }
+        cout << "\nXXX\n";
+    }
+    cout << endl;
+    */
     cout << "Creating NSTs done\n";
     
     /*  Test result NST
@@ -503,7 +513,7 @@ void Population::GA_Evolution(int galoop) {
 	cout << "Event list were created" << endl;
 
     // call eval funtion for parent
-    #pragma offload target(mic: 0) in(mang_NST : length(numTask*sizePop) ALLOC)\
+    #pragma offload target(mic) in(mang_NST : length(numTask*sizePop) ALLOC)\
     inout(mang_fitness : length(sizePop) ALLOC) \
     in(rankings : length(2*sizePop) ALLOC) \
     in(startList ) in(endList ) \
@@ -522,7 +532,7 @@ void Population::GA_Evolution(int galoop) {
 // begin ga 
 	clock_t t;
 	//t = clock();
-    #pragma offload target(mic: 0) nocopy(mang_NST : length(numTask*sizePop) REUSE) \
+    #pragma offload target(mic) nocopy(mang_NST : length(numTask*sizePop) REUSE) \
     nocopy(mang_fitness : length(sizePop) REUSE)\
     nocopy(rankings : length(2*sizePop) REUSE) \
     in(startList) in(endList) in(NSToffspring) in(fitness_offspring)\
@@ -550,7 +560,7 @@ void Population::GA_Evolution(int galoop) {
         //	t = clock() - t;
         }
     }
-    #pragma offload target(mic: 0) out(mang_NST : length(numTask*sizePop) FREE) \
+    #pragma offload target(mic) out(mang_NST : length(numTask*sizePop) FREE) \
     out(mang_fitness : length(sizePop) FREE)\
     nocopy(rankings : length(2*sizePop) FREE) \
     nocopy(ncore : length(numTask) FREE) \
@@ -959,7 +969,10 @@ int main() {
     srand(time(NULL));
     srand48(time(NULL));
 #pragma omp parallel 
-{}
+{   
+    if (omp_get_thread_num() == 0)
+        cout << "Num threads " << omp_get_num_threads() << endl;
+}
     double avarage_time = 0;
     int i, temp = 0;
 for (i = 0; i < 5; i++) {
@@ -988,6 +1001,6 @@ for (i = 0; i < 5; i++) {
     cout<<"Done\n";
     avarage_time += dTime2 - dTime1;
 }
-    cout << "Avarage time: " << avarage_time/(i+1) << endl;
+    cout << "Avarage time: " << avarage_time/(i) << endl;
     return 0;
 }

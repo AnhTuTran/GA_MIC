@@ -19,11 +19,11 @@ Begin optimization report for: main()
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (main()) [1] GAtuantu.cpp(809,12)
-  -> (812,13) Population::~Population(Population *)
-  -> (812,13) Population::Population(Population *)
-  -> (813,4) Population::readFile(Population *, char *)
-  -> (814,4) Population::bestFit(Population *)
-  -> INLINE: (816,4) Population::xuat_file(Population *, char *)
+  -> (814,13) Population::~Population(Population *)
+  -> (814,13) Population::Population(Population *)
+  -> (815,4) Population::readFile(Population *, char *)
+  -> (816,4) Population::bestFit(Population *)
+  -> INLINE: (818,4) Population::xuat_file(Population *, char *)
     -> INLINE: (324,29) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
     -> INLINE: (324,29) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
@@ -40,7 +40,7 @@ INLINE REPORT: (main()) [1] GAtuantu.cpp(809,12)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
     -> INLINE: (336,10) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
-  -> INLINE: (822,4) Population::GA_Evolution(Population *, int)
+  -> INLINE: (824,4) Population::GA_Evolution(Population *, int)
     -> (432,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
     -> INLINE: (435,25) Tasks::getStartTime(Tasks *, int)
     -> INLINE: (437,38) Tasks::getDuration(Tasks *, int)
@@ -55,7 +55,7 @@ INLINE REPORT: (main()) [1] GAtuantu.cpp(809,12)
     -> (459,3) Population::mutan(Population *, int *)
     -> (461,3) Population::evalNST(Population *, int *, float *, int *, int *)
     -> (463,3) Population::selection(Population *, int *, float *)
-  -> INLINE: (827,4) Population::xuat_file(Population *, char *)
+  -> INLINE: (829,4) Population::xuat_file(Population *, char *)
     -> INLINE: (324,29) std::basic_ofstream<char, std::char_traits<char>>::basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const, const char *, std::ios_base::openmode)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
     -> INLINE: (324,29) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
@@ -72,7 +72,7 @@ INLINE REPORT: (main()) [1] GAtuantu.cpp(809,12)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
     -> INLINE: (336,10) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
-  -> INLINE: (828,4) Population::printBest(Population *, char *)
+  -> INLINE: (830,4) Population::printBest(Population *, char *)
     -> (303,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
     -> (303,50) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, float)
     -> (303,70) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
@@ -97,62 +97,65 @@ INLINE REPORT: (main()) [1] GAtuantu.cpp(809,12)
     -> (320,44) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
     -> INLINE: (320,44) std::basic_ofstream<char, std::char_traits<char>>::~basic_ofstream(std::basic_ofstream<char, std::char_traits<char>> *const)
        {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
-  -> (829,6) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> (829,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (829,35) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-  -> (829,54) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> (829,61) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> (830,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (830,56) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (831,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (831,44) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (831,6) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> (831,12) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (831,35) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+  -> (831,54) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> (831,61) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
   -> (832,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> (832,32) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
-  -> (832,45) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
-  -> (833,6) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
-  -> INLINE: (834,1) Population::~Population(Population *)
+  -> (832,56) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (833,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (833,44) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (834,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (834,32) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+  -> (834,45) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
+  -> (835,6) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> INLINE: (837,1) Population::~Population(Population *)
     -> INLINE: (279,3) Tasks::~Tasks(Tasks *)
       -> (157,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
     -> INLINE: (280,3) Machines::~Machines(Machines *)
       -> (209,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
     -> (281,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (838,10) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
+  -> (838,30) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, double)
+  -> (838,50) std::basic_ostream<char, std::char_traits<char>>::operator<<(std::basic_ostream<char, std::char_traits<char>> *, std::basic_ostream<char, std::char_traits<char>>::__ostream_type &(*)(std::basic_ostream<char, std::char_traits<char>>::__ostream_type &))
 
 
     Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
 
 
-LOOP BEGIN at GAtuantu.cpp(331,4) inlined into GAtuantu.cpp(816,4)
+LOOP BEGIN at GAtuantu.cpp(331,4) inlined into GAtuantu.cpp(818,4)
    remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(332,11) ]
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(429,2) inlined into GAtuantu.cpp(822,4)
+LOOP BEGIN at GAtuantu.cpp(429,2) inlined into GAtuantu.cpp(824,4)
    remark #25399: memcopy generated
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(434,2) inlined into GAtuantu.cpp(822,4)
+LOOP BEGIN at GAtuantu.cpp(434,2) inlined into GAtuantu.cpp(824,4)
    remark #15300: LOOP WAS VECTORIZED
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(434,2) inlined into GAtuantu.cpp(822,4)
+LOOP BEGIN at GAtuantu.cpp(434,2) inlined into GAtuantu.cpp(824,4)
 <Remainder loop for vectorization>
    remark #15301: REMAINDER LOOP WAS VECTORIZED
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(446,2) inlined into GAtuantu.cpp(822,4)
+LOOP BEGIN at GAtuantu.cpp(446,2) inlined into GAtuantu.cpp(824,4)
    remark #25399: memcopy generated
    remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(451,2) inlined into GAtuantu.cpp(822,4)
+LOOP BEGIN at GAtuantu.cpp(451,2) inlined into GAtuantu.cpp(824,4)
    remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(457,3) ]
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(331,4) inlined into GAtuantu.cpp(827,4)
+LOOP BEGIN at GAtuantu.cpp(331,4) inlined into GAtuantu.cpp(829,4)
    remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(332,11) ]
 LOOP END
 
-LOOP BEGIN at GAtuantu.cpp(314,3) inlined into GAtuantu.cpp(828,4)
+LOOP BEGIN at GAtuantu.cpp(314,3) inlined into GAtuantu.cpp(830,4)
    remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(315,11) ]
 LOOP END
 
@@ -160,14 +163,14 @@ LOOP END
 Non-optimizable loops:
 
 
-LOOP BEGIN at GAtuantu.cpp(811,1)
-   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(813,4) ]
+LOOP BEGIN at GAtuantu.cpp(813,1)
+   remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(815,4) ]
 
-   LOOP BEGIN at GAtuantu.cpp(329,3) inlined into GAtuantu.cpp(816,4)
+   LOOP BEGIN at GAtuantu.cpp(329,3) inlined into GAtuantu.cpp(818,4)
       remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(330,10) ]
    LOOP END
 
-   LOOP BEGIN at GAtuantu.cpp(329,3) inlined into GAtuantu.cpp(827,4)
+   LOOP BEGIN at GAtuantu.cpp(329,3) inlined into GAtuantu.cpp(829,4)
       remark #15333: loop was not vectorized: exception handling for a call prevents vectorization   [ GAtuantu.cpp(330,10) ]
    LOOP END
 LOOP END
@@ -185,10 +188,10 @@ GAtuantu.cpp(809,12):remark #34051: REGISTER ALLOCATION : [main] GAtuantu.cpp:80
         Assigned     :   18[ rax rdx rcx rbx rsi rdi r8-r9 r12-r15 zmm0-zmm5]
         
     Routine temporaries
-        Total         :     836
-            Global    :     158
-            Local     :     678
-        Regenerable   :     351
+        Total         :     848
+            Global    :     163
+            Local     :     685
+        Regenerable   :     355
         Spilled       :      10
         
     Routine stack
@@ -196,8 +199,8 @@ GAtuantu.cpp(809,12):remark #34051: REGISTER ALLOCATION : [main] GAtuantu.cpp:80
             Reads     :      58 [2.25e+04 ~ 7.7%]
             Writes    :     168 [1.92e+04 ~ 6.6%]
         Spills        :      48 bytes*
-            Reads     :       5 [2.48e+01 ~ 0.0%]
-            Writes    :       6 [1.20e+01 ~ 0.0%]
+            Reads     :       8 [3.18e+01 ~ 0.0%]
+            Writes    :       8 [2.30e+01 ~ 0.0%]
     
     Notes
     
@@ -2159,7 +2162,7 @@ Begin optimization report for: Population::bestFit(Population *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (Population::bestFit(Population *)) [30] GAtuantu.cpp(528,27)
+INLINE REPORT: (Population::bestFit(Population *)) [29] GAtuantu.cpp(528,27)
   -> INLINE: (532,25) Tasks::getStartTime(Tasks *, int)
   -> INLINE: (534,38) Tasks::getDuration(Tasks *, int)
   -> INLINE: (537,2) sort_by_key_less(int *, int, int *)
@@ -2512,7 +2515,7 @@ Begin optimization report for: Population::readFile(Population *, char *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (Population::readFile(Population *, char *)) [32] GAtuantu.cpp(730,41)
+INLINE REPORT: (Population::readFile(Population *, char *)) [31] GAtuantu.cpp(730,41)
   -> (731,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
   -> INLINE: (732,9) std::basic_string<char, std::char_traits<char>, std::allocator<char>>::~basic_string(std::basic_string<char, std::char_traits<char>, std::allocator<char>> *)
      {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
@@ -2745,7 +2748,7 @@ Begin optimization report for: Population::Population(Population *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (Population::Population(Population *)) [42] GAtuantu.cpp(263,15)
+INLINE REPORT: (Population::Population(Population *)) [41] GAtuantu.cpp(263,15)
   -> INLINE: (268,3) Tasks::Tasks(Tasks *)
     -> INLINE: (145,3) Tasks::host_init_Task(Tasks *)
     -> (146,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
@@ -2815,7 +2818,7 @@ Begin optimization report for: Population::~Population(Population *)
 
     Report from: Interprocedural optimizations [ipo]
 
-INLINE REPORT: (Population::~Population(Population *)) [43] GAtuantu.cpp(274,16)
+INLINE REPORT: (Population::~Population(Population *)) [42] GAtuantu.cpp(274,16)
   -> INLINE: (279,3) Tasks::~Tasks(Tasks *)
     -> (157,7) std::operator<<<std::char_traits<char>>(std::basic_ostream<char, std::char_traits<char>> &, const char *)
   -> INLINE: (280,3) Machines::~Machines(Machines *)
