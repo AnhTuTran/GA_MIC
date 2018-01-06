@@ -16239,7 +16239,7 @@ INLINE REPORT: (main()) [1/487=0.2%] GA_baseline.cpp(968,12)
   -> EXTERN: (979,16) Population::Population()
   -> EXTERN: (980,7) Population::readFile(char*)
   -> EXTERN: (983,5) gettimeofday(timeval *, timezone *)
-  -> (986,7) Population::GA_Evolution(Population *, int) (isz = 319) (sz = 326)
+  -> (986,7) Population::GA_Evolution(Population *, int) (isz = 318) (sz = 325)
      [[ Called routine is noinline  <1>]]
   -> EXTERN: (988,5) gettimeofday(timeval *, timezone *)
   -> EXTERN: (991,7) Population::xuat_file(char*)
