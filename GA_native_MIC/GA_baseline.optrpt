@@ -212,7 +212,8 @@ LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(95,2) inlined into GAtuantu.cpp(565,2)
 <Remainder loop for vectorization>
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #25436: completely unrolled by 4  
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(100,2) inlined into GAtuantu.cpp(565,2)
@@ -229,7 +230,8 @@ LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(100,2) inlined into GAtuantu.cpp(565,2)
 <Remainder loop for vectorization, Multiversioned v1>
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #25436: completely unrolled by 4  
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(100,2) inlined into GAtuantu.cpp(565,2)
@@ -250,7 +252,8 @@ LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(95,2) inlined into GAtuantu.cpp(566,2)
 <Remainder loop for vectorization>
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #25436: completely unrolled by 4  
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(100,2) inlined into GAtuantu.cpp(566,2)
@@ -267,7 +270,8 @@ LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(100,2) inlined into GAtuantu.cpp(566,2)
 <Remainder loop for vectorization, Multiversioned v1>
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #25436: completely unrolled by 4  
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(100,2) inlined into GAtuantu.cpp(566,2)
@@ -284,7 +288,7 @@ LOOP END
 LOOP BEGIN at GAtuantu.cpp(587,4)
 <Remainder loop for vectorization>
    remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
-   remark #25018: Total number of lines prefetched=16
+   remark #25018: Total number of lines prefetched=8
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(623,2)
@@ -300,12 +304,13 @@ LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(644,3)
    remark #15300: LOOP WAS VECTORIZED
-   remark #25018: Total number of lines prefetched=8
+   remark #25018: Total number of lines prefetched=4
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(644,3)
 <Remainder loop for vectorization>
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #25436: completely unrolled by 4  
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(660,3)
@@ -330,23 +335,13 @@ LOOP BEGIN at GAtuantu.cpp(572,2)
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(572,2)
-<Alternate Alignment Vectorized Loop>
-   remark #25018: Total number of lines prefetched=4
-LOOP END
-
-LOOP BEGIN at GAtuantu.cpp(572,2)
 <Remainder loop for vectorization>
    remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(636,9)
-<Peeled loop for vectorization>
-   remark #15335: peel loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
-LOOP END
-
-LOOP BEGIN at GAtuantu.cpp(636,9)
    remark #15301: OpenMP SIMD LOOP WAS VECTORIZED
-   remark #25018: Total number of lines prefetched=4
+   remark #25018: Total number of lines prefetched=2
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(636,9)
@@ -376,22 +371,22 @@ GAtuantu.cpp(555,27):remark #34051: REGISTER ALLOCATION : [_ZN10Population7bestF
         Reserved     :    2[ rsp rip]
         Available    :   63[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm31 k0-k7]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   49[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm26 k0-k7]
+        Assigned     :   46[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm23 k0-k7]
         
     Routine temporaries
-        Total         :     974
-            Global    :     209
-            Local     :     765
-        Regenerable   :     245
-        Spilled       :      17
+        Total         :     980
+            Global    :     206
+            Local     :     774
+        Regenerable   :     243
+        Spilled       :      20
         
     Routine stack
-        Variables     :   28614 bytes*
-            Reads     :      55 [5.51e+03 ~ 0.0%]
-            Writes    :      93 [2.77e+03 ~ 0.0%]
-        Spills        :     168 bytes*
-            Reads     :      47 [8.08e+03 ~ 0.0%]
-            Writes    :      44 [4.91e+03 ~ 0.0%]
+        Variables     :   14614 bytes*
+            Reads     :      75 [3.06e+03 ~ 0.1%]
+            Writes    :     107 [1.39e+03 ~ 0.0%]
+        Spills        :     200 bytes*
+            Reads     :      59 [2.91e+03 ~ 0.0%]
+            Writes    :      54 [3.30e+03 ~ 0.1%]
     
     Notes
     
@@ -1272,8 +1267,8 @@ GAtuantu.cpp(294,33):remark #34051: REGISTER ALLOCATION : [_ZN10Population9print
         
     Routine stack
         Variables     :     536 bytes*
-            Reads     :      12 [5.02e+00 ~ 0.1%]
-            Writes    :      51 [9.87e+00 ~ 0.2%]
+            Reads     :      12 [5.02e+00 ~ 0.2%]
+            Writes    :      51 [9.87e+00 ~ 0.4%]
         Spills        :       0 bytes*
             Reads     :       0 [0.00e+00 ~ 0.0%]
             Writes    :       0 [0.00e+00 ~ 0.0%]
@@ -1459,12 +1454,12 @@ GAtuantu.cpp(441,43):remark #34051: REGISTER ALLOCATION : [_ZN10Population12GA_E
         Spilled       :       3
         
     Routine stack
-        Variables     :   24068 bytes*
-            Reads     :      20 [1.04e+01 ~ 0.0%]
-            Writes    :      17 [1.05e+01 ~ 0.0%]
+        Variables     :   16068 bytes*
+            Reads     :      20 [2.26e+01 ~ 0.0%]
+            Writes    :      17 [1.61e+01 ~ 0.0%]
         Spills        :      56 bytes*
-            Reads     :      19 [2.61e+00 ~ 0.0%]
-            Writes    :      19 [1.26e+01 ~ 0.0%]
+            Reads     :      19 [5.65e+00 ~ 0.0%]
+            Writes    :      19 [1.82e+01 ~ 0.0%]
     
     Notes
     
@@ -1724,22 +1719,22 @@ GAtuantu.cpp(399,73):remark #34051: REGISTER ALLOCATION : [_ZN10Population9selec
         Reserved     :    2[ rsp rip]
         Available    :   63[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm31 k0-k7]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   18[ rax rdx rcx rsi rdi r8-r15 zmm0-zmm2 k1-k2]
+        Assigned     :   19[ rax rdx rcx rsi rdi r8-r15 zmm0-zmm2 k1-k3]
         
     Routine temporaries
-        Total         :     674
+        Total         :     666
             Global    :     186
-            Local     :     488
+            Local     :     480
         Regenerable   :     188
-        Spilled       :       6
+        Spilled       :       5
         
     Routine stack
         Variables     :   16117 bytes*
             Reads     :      27 [1.05e+01 ~ 0.0%]
             Writes    :      28 [2.45e+01 ~ 0.0%]
-        Spills        :      80 bytes*
-            Reads     :      34 [3.65e+00 ~ 0.0%]
-            Writes    :      32 [1.93e+01 ~ 0.0%]
+        Spills        :      72 bytes*
+            Reads     :      31 [1.18e+02 ~ 0.0%]
+            Writes    :      29 [7.40e+01 ~ 0.0%]
     
     Notes
     
@@ -2611,12 +2606,13 @@ LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(750,4)
    remark #15300: LOOP WAS VECTORIZED
-   remark #25018: Total number of lines prefetched=4
+   remark #25018: Total number of lines prefetched=2
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(750,4)
 <Remainder loop for vectorization>
-   remark #15301: REMAINDER LOOP WAS VECTORIZED
+   remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #25436: completely unrolled by 4  
 LOOP END
 
 LOOP BEGIN at GAtuantu.cpp(695,9)
@@ -2655,22 +2651,22 @@ GAtuantu.cpp(690,91):remark #34051: REGISTER ALLOCATION : [_ZN10Population7evalN
         Reserved     :    2[ rsp rip]
         Available    :   63[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm31 k0-k7]
         Callee-save  :    6[ rbx rbp r12-r15]
-        Assigned     :   40[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm20 k0-k4]
+        Assigned     :   39[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm20 k0-k3]
         
     Routine temporaries
-        Total         :     461
-            Global    :     104
-            Local     :     357
-        Regenerable   :     100
-        Spilled       :      17
+        Total         :     469
+            Global    :     106
+            Local     :     363
+        Regenerable   :      99
+        Spilled       :      18
         
     Routine stack
-        Variables     :   16092 bytes*
-            Reads     :      28 [2.17e+04 ~ 2.2%]
-            Writes    :      30 [1.92e+04 ~ 1.9%]
-        Spills        :     176 bytes*
-            Reads     :      58 [4.30e+04 ~ 4.3%]
-            Writes    :      45 [3.09e+04 ~ 3.1%]
+        Variables     :    8092 bytes*
+            Reads     :      34 [1.36e+04 ~ 3.1%]
+            Writes    :      30 [9.60e+03 ~ 2.2%]
+        Spills        :     184 bytes*
+            Reads     :      63 [2.15e+04 ~ 4.9%]
+            Writes    :      50 [1.55e+04 ~ 3.5%]
     
     Notes
     
@@ -2758,7 +2754,7 @@ Begin optimization report for: sort_by_key_less..0(int *, int, int *)
     Report from: Interprocedural optimizations [ipo]
 
 INLINE REPORT: (sort_by_key_less..0(int *, int, int *)) [33] GAtuantu.cpp(93,69)
-  CLONED FROM: sort_by_key_less(int *, int, int *)(X,1000,X)
+  CLONED FROM: sort_by_key_less(int *, int, int *)(X,500,X)
   -> INLINE: (99,2) std::stable_sort<keySortLess *>(keySortLess *, keySortLess *)
      {{ Inlining of routines from system headers is omitted. Use -qopt-report=3 to view full report. }}
 
@@ -3903,8 +3899,8 @@ GAtuantu.cpp(677,68):remark #34051: REGISTER ALLOCATION : [_ZN10Population8print
         
     Routine stack
         Variables     :     536 bytes*
-            Reads     :      12 [5.02e+00 ~ 0.1%]
-            Writes    :      51 [9.87e+00 ~ 0.2%]
+            Reads     :      12 [5.02e+00 ~ 0.2%]
+            Writes    :      51 [9.87e+00 ~ 0.3%]
         Spills        :       8 bytes*
             Reads     :       1 [5.00e-01 ~ 0.0%]
             Writes    :       1 [1.00e+00 ~ 0.0%]

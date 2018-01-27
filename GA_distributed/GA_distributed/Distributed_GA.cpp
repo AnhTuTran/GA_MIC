@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     //printf("I am %d of %d\n", rank, size);
     printf("Hello world! I have %ld logical processors, rank %d.\n",
             sysconf(_SC_NPROCESSORS_ONLN ), rank);
-/*
+
     string line, filename = "exp1.cpp";
     ifstream myfile ("/opt/share/tu/GA_MIC/GA_distributed/mpi_env_setup/exp1.cpp");
     if (myfile.is_open()) {
@@ -30,8 +30,8 @@ int main(int argc, char* argv[]) {
     } else cout << "Unable to open file\n";
 
     MPI_Finalize();
-    return 0;
-*/
+//    return 0;
+
     // execute GA
     // gather the best solutions from slaves
     best_sol = rank + 10;
