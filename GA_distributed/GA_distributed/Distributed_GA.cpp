@@ -11,6 +11,8 @@
 
 #include <omp.h>
 #include "mpi.h"
+#include <limits>
+
 
 using namespace std;
 
@@ -242,7 +244,7 @@ public :
 };
 
 class Population {
-private :
+public:
     int * mang_NST;         // set of NSTs
     float * mang_fitness;       // do tuong thich
     int * mang_makespan;        // thoi gian hoan thanh solution
@@ -839,8 +841,8 @@ void Population::extractField( float* fieldArray, bool type){
 
 int main(int argc, char* argv[]) {
     int rank, nprocs;
-    int best_sol;
-    int *solutions;  
+    float best_sol;
+    float *solutions;  
 
     MPI_Init(&argc, &argv);
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
@@ -856,46 +858,71 @@ int main(int argc, char* argv[]) {
         if (omp_get_thread_num() == 0)
             cout << "Num threads " << omp_get_num_threads() << endl;
     }
-    double avarage_time = 0;
+    double avarage_exe_time = 0;
+    double avarage_com_time = 0;
+
     int i;
     for (i = 0; i < 5; i++) {
         Population P;
-        P.readFile("/home/svtttn_mrhung/AnhTuTran/GA_MIC/GA_distributed/GA_distributed/data.txt");
+        P.readFile("/opt/share/tu/GA_MIC/GA_distributed/GA_distributed/data.txt");
 
-        struct timeval timeRunOfGa;  
-        gettimeofday(&timeRunOfGa, NULL);  
-        double dTime1 = timeRunOfGa.tv_sec+(timeRunOfGa.tv_usec/1000000.0);  
-         
+        double exe_time = omp_get_wtime();
+        // Execute GA    
         P.GA_Evolution(generation);
+            
+        // gather the best solutions from slaves
+        best_sol = P.mang_fitness[0];
+        cout << "Sols " << best_sol << endl;
+        solutions = new float[nprocs];
         
-        gettimeofday(&timeRunOfGa, NULL);  
-        double dTime2 = timeRunOfGa.tv_sec+(timeRunOfGa.tv_usec/1000000.0); 
+        MPI_Barrier(MPI_COMM_WORLD);
+        double com_time = MPI_Wtime();
+        MPI_Gather(&best_sol, 1, MPI_FLOAT, solutions, 1, MPI_FLOAT, MASTER, MPI_COMM_WORLD);
+        //MPI_Barrier(MPI_COMM_WORLD);
+        com_time =  MPI_Wtime() - com_time;
         
-        //P.xuat_file("after_ga.txt");
-        //P.printBest("best_solution.txt");
+        // choose the best solutions among nodes
+        if (rank == MASTER) {
+            float inf = numeric_limits<float>::infinity();
+            for (int i = 0; i < nprocs; i++) {
+                if (solutions[i] > 0 && solutions[i] < inf && best_sol < solutions[i]) {
+                    best_sol = solutions[i];
+                }
+            }
+        }
+        exe_time = omp_get_wtime() - exe_time;
+
+
+
         if (rank == MASTER) {
             P.bestFit();
             P.xuat_file("nst.txt");
         }
-        cout<<endl<<"total time run ga: "<< dTime2 - dTime1 << endl<<endl;
+        
+
+        if (rank == MASTER) {
+            cout << "Best solution among nodes " << best_sol << endl;
+        
+
+        cout << "XXXXXXXXXXXXXXXXXXXXXXX" << endl;
+        cout << "Computing time ga: "<< exe_time - com_time << endl;
+        cout << "Communication time ga: "<< com_time << endl;
+        cout << "XXXXXXXXXXXXXXXXXXXXXXX" << endl;
+
         cout << "Test parameters: machines " << numMachine << " tasks " << numTask
              << " population size " << sizePop << " generations " << generation
              << " Mutation rate: " << rateMutan << endl;
-        cout<<"Done\n";
-        avarage_time += dTime2 - dTime1;
-    }
-    cout << "Avarage time: " << avarage_time/(i) << endl;
-    // gather the best solutions from slaves
-    best_sol = rank + 10;
-    solutions = new int[nprocs];
-    MPI_Gather(&best_sol, 1, MPI_INTEGER, solutions, 1, MPI_INTEGER, MASTER, MPI_COMM_WORLD);
-
-    // choose the best solutions among nodes
-    if (rank == MASTER) {
-        for (int i = 0; i < nprocs; i++) {
-            cout << i << " " << solutions[i] << endl;
         }
+        avarage_exe_time += exe_time;
+        avarage_com_time += com_time;
     }
 
+    if (rank == MASTER) {
+        cout << "Avarage compute time: " << avarage_exe_time/(i) - avarage_com_time/(i) << endl;
+        cout << "Avarage communication time: " << avarage_com_time/(i)  << endl;
+    }
+    MPI_Finalize();
+    
     return 0;
+
 }
