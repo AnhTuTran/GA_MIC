@@ -864,7 +864,8 @@ int main(int argc, char* argv[]) {
     int i;
     for (i = 0; i < 5; i++) {
         Population P;
-        P.readFile("/opt/share/tu/GA_MIC/GA_distributed/GA_distributed/data.txt");
+        //P.readFile("/opt/share/tu/GA_MIC/GA_distributed/GA_distributed/data.txt");
+	P.readFile("/opt/share/data.txt");	
 
         double exe_time = omp_get_wtime();
         // Execute GA    
