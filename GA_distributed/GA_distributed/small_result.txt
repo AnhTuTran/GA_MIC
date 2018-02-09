@@ -1,0 +1,2460 @@
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=200
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=200
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 2.
+
+Hello world! I have 244 logical processors, rank 1.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were created
+Event list were created
+Sols 4.64798e-09
+Sols -4
+Sols -1
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.64798e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 1.51884
+Communication time ga: 0.000430107
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols -2
+Sols 4.64103e-09
+Sols -2
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+Tasks database was created
+File is opened
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.64103e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 1.51464
+Communication time ga: 0.000466108
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols -1
+Sols -1
+Sols -2
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Begin init random NSTs
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes -1
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 1.52451
+Communication time ga: 0.000406027
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols -1
+Sols -3
+Sols -2
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+Tasks database was created
+The population was created
+Begin read file
+File is opened
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes -1
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 1.4894
+Communication time ga: 0.000525951
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols -4
+Sols -4
+Sols 4.6359e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.6359e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 1.30442
+Communication time ga: 0.000263929
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 1.47036
+Avarage communication time: 0.000418425
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=400
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=400
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+setrlimit returned result = -1
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 1.
+
+Hello world! I have 244 logical processors, rank 2.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244Num threads 244
+
+Tasks database was created
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65075e-09
+Sols 4.64768e-09
+Sols 4.62279e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was destroyed
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65075e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 2.22573
+Communication time ga: 1.50204e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Event list were createdBegin create list
+
+Event list were created
+Sols 4.65102e-09
+Sols -2
+Sols -1
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65102e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 2.20741
+Communication time ga: 0.000155926
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols -1
+Sols 4.45306e-09
+Sols -2
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+Creating NSTs done
+The population was created
+File is opened
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.45306e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 2.25209
+Communication time ga: 0.000163078
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were created
+Event list were created
+Sols -1
+Sols 4.64285e-09
+Sols -3
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.64285e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 2.22404
+Communication time ga: 0.000121117
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols -1
+Sols -2
+Sols -1
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes -1
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 2.20441
+Communication time ga: 0.000142097
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 2.22273
+Avarage communication time: 0.000119448
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=600
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=600
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+setrlimit returned result = -1
+Hello world! I have 244 logical processors, rank 2.
+Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 1.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads Tasks database was created
+Machine database was created
+Begin init random NSTs
+244
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols -1
+Sols 4.64392e-09
+Sols 4.64975e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+Begin read file
+File is opened
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.64975e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 3.17219
+Communication time ga: 1.78814e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Event list were createdBegin create list
+
+Event list were created
+Sols 4.65222e-09
+Sols -1
+Sols 4.64596e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+Creating NSTs done
+The population was created
+Begin read file
+The population was created
+Begin read file
+File is opened
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65222e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 3.17295
+Communication time ga: 0.000144958
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were created
+Event list were created
+Begin create list
+Event list were created
+Sols -1
+Sols -1
+Sols -2
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes -1
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 3.10357
+Communication time ga: 6.10352e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols 4.65157e-09
+Sols 4.6484e-09
+Sols 4.6484e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+File is opened
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65157e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 3.17818
+Communication time ga: 0.000149012
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were createdBegin create list
+Event list were createdBegin create list
+Event list were created
+
+
+Sols 4.65194e-09
+Sols -2
+Sols 4.64964e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65194e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 3.17919
+Communication time ga: 0.00018096
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 3.16122
+Avarage communication time: 0.000110769
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=800
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=800
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 1.
+
+Hello world! I have 244 logical processors, rank 2.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Num threads 244
+Tasks database was created
+Creating NSTs done
+Machine database was created
+The population was created
+Begin read file
+Begin init random NSTs
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65235e-09
+Sols 4.65052e-09
+Sols 4.65044e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+Begin read file
+File is opened
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65235e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 4.07263
+Communication time ga: 1.71661e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Event list were created
+Sols 4.65199e-09
+Sols 4.60811e-09
+Sols 4.64947e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65199e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 4.07464
+Communication time ga: 8.10623e-06
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Event list were created
+Sols 4.6523e-09
+Sols -1
+Sols -1
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+Begin read file
+File is opened
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.6523e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 4.02296
+Communication time ga: 5.19753e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were created
+Event list were created
+Sols 4.65132e-09
+Sols 4.65072e-09
+Sols 4.64966e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+File is opened
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65132e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 4.06426
+Communication time ga: 0.000133038
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Begin create list
+Event list were created
+Sols 4.65224e-09
+Sols 4.64918e-09
+Sols 4.64965e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65224e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 4.07098
+Communication time ga: 0.000166893
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 4.06109
+Avarage communication time: 7.54356e-05
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1000
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1000
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824setrlimit returned result = -1
+Hello world! I have 244 logical processors, rank 1.
+
+Hello world! I have 244 logical processors, rank 2.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were created
+Event list were created
+Sols 4.65267e-09
+Sols 4.64959e-09
+Sols 4.64877e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+Begin read file
+The population was created
+File is opened
+Begin read file
+File is opened
+Best solution among nodes 4.65267e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.04284
+Communication time ga: 0.000253916
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+Event list were created
+
+Sols 4.6526e-09
+Sols 4.65106e-09
+Sols 4.65065e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.6526e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.04426
+Communication time ga: 0.000311852
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Sols 4.63596e-09
+Sols -1
+Sols 4.65106e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+File is opened
+Begin read file
+Best fit solution: 4.65348e-09
+File is opened
+Best solution among nodes 4.65106e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.00292
+Communication time ga: 6.91414e-06
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65259e-09
+Sols 4.64796e-09
+Sols 4.64853e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Best fit solution: 4.65348e-09
+The population was created
+Begin read file
+File is opened
+Begin read file
+File is opened
+Best solution among nodes 4.65259e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.0267
+Communication time ga: 0.000242949
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.6524e-09
+Sols 4.56382e-09
+Sols 4.65064e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.6524e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.05139
+Communication time ga: 0.000239849
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 5.03362
+Avarage communication time: 0.000211096
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1200
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1200
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 1.
+
+Hello world! I have 244 logical processors, rank 2.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65268e-09
+Sols 4.65046e-09
+Sols 4.65106e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Machine database was destroyed
+The population has been destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65268e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.73217
+Communication time ga: 0.000288963
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols 4.65269e-09
+Sols -1
+Sols 4.64979e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Best fit solution: 4.65348e-09
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65269e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.70704
+Communication time ga: 8.82149e-06
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols 4.65267e-09
+Sols 4.65111e-09
+Sols 4.65142e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65267e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.72479
+Communication time ga: 0.000130892
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65278e-09
+Sols 4.64439e-09
+Sols 4.65123e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Best fit solution: 4.65348e-09
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65278e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.72458
+Communication time ga: 0.000149965
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65272e-09
+Sols 4.65134e-09
+Sols 4.65128e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65272e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 5.72133
+Communication time ga: 0.000164986
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1200 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 5.72198
+Avarage communication time: 0.000148726
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1400
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1400
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+setrlimit returned result = -1
+Hello world! I have 244 logical processors, rank 1.
+setrlimit returned result = -1
+Hello world! I have 244 logical processors, rank 2.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65289e-09
+Sols -1
+Sols 4.65143e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Best fit solution: 4.65348e-09
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65289e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 6.7825
+Communication time ga: 0.000371933
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Event list were createdBegin create list
+
+Event list were created
+Sols 4.65272e-09
+Sols 4.65174e-09
+Sols 4.65154e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+Best fit solution: 4.65348e-09
+The population was created
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65272e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 6.74338
+Communication time ga: 0.000202894
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols 4.65285e-09
+Sols 4.65191e-09
+Sols -1
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+File is opened
+Begin read file
+File is opened
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65285e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 6.60001
+Communication time ga: 0.000204086
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65284e-09
+Sols 4.6368e-09
+Sols 4.65084e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65284e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 6.74733
+Communication time ga: 0.000482082
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65282e-09
+Sols 4.65175e-09
+Sols 4.63679e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65282e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 6.6974
+Communication time ga: 0.000305176
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1400 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 6.71412
+Avarage communication time: 0.000313234
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1600
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1600
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 1.
+
+Hello world! I have 244 logical processors, rank 2.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Sols 4.65283e-09
+Sols 4.65177e-09
+Sols 4.65207e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65283e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 7.6284
+Communication time ga: 0.000177145
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were created
+Event list were createdBegin create list
+
+Event list were created
+Sols 4.65292e-09
+Sols 4.65149e-09
+Sols 4.65088e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.65292e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 7.59695
+Communication time ga: 0.000127077
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were created
+Event list were createdBegin create list
+
+Event list were created
+Sols 4.65291e-09
+Sols 4.65152e-09
+Sols 4.64146e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.65291e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 7.5384
+Communication time ga: 0.00020504
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols 4.65293e-09
+Sols -1
+Sols 4.65211e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.65293e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 7.50259
+Communication time ga: 0.000202179
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were createdBegin create list
+Begin create list
+Event list were created
+Event list were created
+
+Sols 4.65294e-09
+Sols 4.65149e-09
+Sols 4.65185e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65294e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 7.61539
+Communication time ga: 0.000204802
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1600 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 7.57635
+Avarage communication time: 0.000183249
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1800
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=1800
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+Stack size: 1073741824Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 2.
+
+Hello world! I have 244 logical processors, rank 1.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65282e-09
+Sols 4.65229e-09
+Sols 4.65181e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was destroyed
+Machine database was destroyed
+Machine database was created
+The population has been destroyed
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65282e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 8.8412
+Communication time ga: 2.40803e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65289e-09
+Sols -1
+Sols 4.65228e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65289e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 8.83178
+Communication time ga: 1.40667e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65299e-09
+Sols 4.65203e-09
+Sols 4.65197e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.65299e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 8.8398
+Communication time ga: 0.000142097
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Begin create list
+Event list were created
+Event list were createdEvent list were created
+
+Sols 4.6529e-09
+Sols 4.65241e-09
+Sols 4.6505e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Begin read file
+Creating NSTs done
+File is opened
+The population was created
+Begin read file
+File is opened
+Best solution among nodes 4.6529e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 8.81143
+Communication time ga: 0.000142097
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Begin create list
+Event list were created
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65291e-09
+Sols 4.65118e-09
+Sols 4.65148e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65291e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 8.83618
+Communication time ga: 0.000117064
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 1800 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 8.83208
+Avarage communication time: 8.78811e-05
+mpiicpc -o cpu-GA Distributed_GA.cpp -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=2000
+mpiicpc -o mic-GA Distributed_GA.cpp -mmic -qopenmp -D numMachine=500 -D numTask=500 -D generation=500 -D rateMutan=0.005 -D sizePop=2000
+scp mic-GA mic0:~/GA_distributed
+scp mic-GA mic1:~/GA_distributed
+mpiexec -host node25 -np 1 ./cpu-GA : -host mic0 -np 1 ~/GA_distributed/mic-GA : -host mic1 -np 1 ~/GA_distributed/mic-GA
+Stack size: 1073741824
+Hello world! I have 24 logical processors, rank 0.
+setrlimit returned result = -1
+Hello world! I have 244 logical processors, rank 2.
+Stack size: 1073741824
+Hello world! I have 244 logical processors, rank 1.
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Num threads 244
+Num threads 244
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.65308e-09
+Sols 4.65243e-09
+Sols 4.65183e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+The population has been destroyed
+Machine database was created
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.65308e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 9.86064
+Communication time ga: 0.000452042
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 2000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.653e-09
+Sols 4.65219e-09
+Sols 4.65199e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+The population was created
+Creating NSTs done
+Begin read file
+The population was created
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.653e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 9.8285
+Communication time ga: 0.000332117
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 2000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were createdBegin create list
+Begin create list
+Event list were created
+
+Event list were created
+Sols 4.65297e-09
+Sols 4.6522e-09
+Sols 4.65212e-09
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was created
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Machine database was created
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.65297e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 9.84766
+Communication time ga: 0.000298023
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 2000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Begin create list
+Event list were createdEvent list were created
+
+Sols 4.653e-09
+Sols 4.65244e-09
+Sols 4.65218e-09
+Tasks database was destroyed
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Tasks database was created
+Machine database was created
+Machine database was created
+Begin init random NSTs
+Begin init random NSTs
+Best fit solution: 4.65348e-09
+Creating NSTs done
+Creating NSTs done
+The population was created
+The population was created
+Begin read file
+Begin read file
+File is opened
+File is opened
+Best solution among nodes 4.653e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 9.83089
+Communication time ga: 0.000205994
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 2000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Begin create list
+Event list were created
+Sols 4.65299e-09
+Sols 4.65178e-09
+Sols 4.6522e-09
+Tasks database was destroyed
+Machine database was destroyed
+Tasks database was destroyed
+The population has been destroyed
+Machine database was destroyed
+The population has been destroyed
+Best fit solution: 4.65348e-09
+Best solution among nodes 4.65299e-09
+XXXXXXXXXXXXXXXXXXXXXXX
+Computing time ga: 9.82765
+Communication time ga: 1.3113e-05
+XXXXXXXXXXXXXXXXXXXXXXX
+Test parameters: machines 500 tasks 500 population size 2000 generations 500 Mutation rate: 0.005
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage compute time: 9.83907
+Avarage communication time: 0.000260258

@@ -1,0 +1,1090 @@
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=200 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.142857
+Fitness of ga solution: -7
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 2.21627
+
+Test parameters: machines 1000 tasks 1000 population size 200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.111111
+Fitness of ga solution: -9
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 2.24095
+
+Test parameters: machines 1000 tasks 1000 population size 200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.142857
+Fitness of ga solution: -7
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 2.18378
+
+Test parameters: machines 1000 tasks 1000 population size 200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.0833333
+Fitness of ga solution: -12
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 2.12644
+
+Test parameters: machines 1000 tasks 1000 population size 200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.25
+Fitness of ga solution: -4
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 2.1119
+
+Test parameters: machines 1000 tasks 1000 population size 200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 2.17587
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=400 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.333333
+Fitness of ga solution: -3
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 3.94241
+
+Test parameters: machines 1000 tasks 1000 population size 400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 3.87435
+
+Test parameters: machines 1000 tasks 1000 population size 400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 3.89966
+
+Test parameters: machines 1000 tasks 1000 population size 400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.333333
+Fitness of ga solution: -3
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 3.88338
+
+Test parameters: machines 1000 tasks 1000 population size 400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.111111
+Fitness of ga solution: -9
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 3.86097
+
+Test parameters: machines 1000 tasks 1000 population size 400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 3.89215
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=600 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 6.30336
+
+Test parameters: machines 1000 tasks 1000 population size 600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 6.40137
+
+Test parameters: machines 1000 tasks 1000 population size 600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 6.2359
+
+Test parameters: machines 1000 tasks 1000 population size 600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 6.34579
+
+Test parameters: machines 1000 tasks 1000 population size 600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 6.2247
+
+Test parameters: machines 1000 tasks 1000 population size 600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 6.30222
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=800 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 8.07227
+
+Test parameters: machines 1000 tasks 1000 population size 800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 7.89329
+
+Test parameters: machines 1000 tasks 1000 population size 800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 8.057
+
+Test parameters: machines 1000 tasks 1000 population size 800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 5.07457e+08
+Fitness of ga solution: 1.97061e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 7.85713
+
+Test parameters: machines 1000 tasks 1000 population size 800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.333333
+Fitness of ga solution: -3
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 8.0565
+
+Test parameters: machines 1000 tasks 1000 population size 800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 7.98724
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1000 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 9.08325
+
+Test parameters: machines 1000 tasks 1000 population size 1000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.94778e+08
+Fitness of ga solution: 2.02111e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 9.1041
+
+Test parameters: machines 1000 tasks 1000 population size 1000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 9.00938
+
+Test parameters: machines 1000 tasks 1000 population size 1000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.8742e+08
+Fitness of ga solution: 2.05162e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 9.19217
+
+Test parameters: machines 1000 tasks 1000 population size 1000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 5.10117e+08
+Fitness of ga solution: 1.96033e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 8.95244
+
+Test parameters: machines 1000 tasks 1000 population size 1000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 9.06827
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1200 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.87615e+08
+Fitness of ga solution: 2.0508e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 12.0282
+
+Test parameters: machines 1000 tasks 1000 population size 1200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 11.8008
+
+Test parameters: machines 1000 tasks 1000 population size 1200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 11.7104
+
+Test parameters: machines 1000 tasks 1000 population size 1200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 11.5742
+
+Test parameters: machines 1000 tasks 1000 population size 1200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.89151e+08
+Fitness of ga solution: 2.04436e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 11.7576
+
+Test parameters: machines 1000 tasks 1000 population size 1200 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 11.7743
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1400 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86986e+08
+Fitness of ga solution: 2.05345e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 13.0803
+
+Test parameters: machines 1000 tasks 1000 population size 1400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.8654e+08
+Fitness of ga solution: 2.05533e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 12.9627
+
+Test parameters: machines 1000 tasks 1000 population size 1400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.8704e+08
+Fitness of ga solution: 2.05322e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 14.1937
+
+Test parameters: machines 1000 tasks 1000 population size 1400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 12.7805
+
+Test parameters: machines 1000 tasks 1000 population size 1400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86866e+08
+Fitness of ga solution: 2.05395e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 13.022
+
+Test parameters: machines 1000 tasks 1000 population size 1400 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 13.2078
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1600 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86264e+08
+Fitness of ga solution: 2.0565e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 14.7086
+
+Test parameters: machines 1000 tasks 1000 population size 1600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 14.0363
+
+Test parameters: machines 1000 tasks 1000 population size 1600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86333e+08
+Fitness of ga solution: 2.0562e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 15.0626
+
+Test parameters: machines 1000 tasks 1000 population size 1600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.8815e+08
+Fitness of ga solution: 2.04855e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 14.2934
+
+Test parameters: machines 1000 tasks 1000 population size 1600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -0.5
+Fitness of ga solution: -2
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 14.9234
+
+Test parameters: machines 1000 tasks 1000 population size 1600 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 14.6049
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=1800 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86026e+08
+Fitness of ga solution: 2.0575e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 18.3303
+
+Test parameters: machines 1000 tasks 1000 population size 1800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86629e+08
+Fitness of ga solution: 2.05495e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 16.5886
+
+Test parameters: machines 1000 tasks 1000 population size 1800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 17.8443
+
+Test parameters: machines 1000 tasks 1000 population size 1800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 16.5165
+
+Test parameters: machines 1000 tasks 1000 population size 1800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86671e+08
+Fitness of ga solution: 2.05477e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 17.8112
+
+Test parameters: machines 1000 tasks 1000 population size 1800 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 17.4182
+icpc -o GA_MIC GA_baseline.cpp -qopenmp -D numMachine=1000 -D numTask=1000 -D sizePop=2000 -D generation=500 -D rateMutan=0.005
+./GA_MIC
+Num threads 24
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.86229e+08
+Fitness of ga solution: 2.05665e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 20.0699
+
+Test parameters: machines 1000 tasks 1000 population size 2000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.8612e+08
+Fitness of ga solution: 2.0571e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 19.9063
+
+Test parameters: machines 1000 tasks 1000 population size 2000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.85923e+08
+Fitness of ga solution: 2.05794e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 20.7534
+
+Test parameters: machines 1000 tasks 1000 population size 2000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): -1
+Fitness of ga solution: -1
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 19.8354
+
+Test parameters: machines 1000 tasks 1000 population size 2000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Tasks database was created
+Machine database was created
+Begin init random NSTs
+Creating NSTs done
+The population was created
+Begin read file
+File is opened
+Begin create list
+Event list were created
+Total energy consumption (Watt-hour): 4.85826e+08
+Fitness of ga solution: 2.05835e-09
+Writed best solution to file done
+Best fit solution: 2.06145e-09
+
+total time run ga: 20.4229
+
+Test parameters: machines 1000 tasks 1000 population size 2000 generations 500 Mutation rate: 0.005
+Done
+Tasks database was destroyed
+Machine database was destroyed
+The population has been destroyed
+Avarage time: 20.1976

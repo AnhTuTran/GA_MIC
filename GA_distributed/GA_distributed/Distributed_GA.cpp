@@ -12,6 +12,7 @@
 #include <omp.h>
 #include "mpi.h"
 #include <limits>
+#include <sys/resource.h>
 
 
 using namespace std;
@@ -848,6 +849,19 @@ int main(int argc, char* argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &nprocs);
     
+    // Increase stack size
+    const rlim_t kStackSize = 1000L * 1024L * 1024L;   // min stack size = 64 Mb
+    struct rlimit rl;
+    int result;
+
+    rl.rlim_cur = kStackSize;
+    result = setrlimit(RLIMIT_STACK, &rl);
+    if (result != 0) {
+        printf("setrlimit returned result = %d\n", result);
+    } else {
+        cout << "Stack size: " << rl.rlim_cur << endl;
+    }    
+
     printf("Hello world! I have %ld logical processors, rank %d.\n",
             sysconf(_SC_NPROCESSORS_ONLN ), rank);
    
@@ -865,8 +879,9 @@ int main(int argc, char* argv[]) {
     for (i = 0; i < 5; i++) {
         Population P;
         //P.readFile("/opt/share/tu/GA_MIC/GA_distributed/GA_distributed/data.txt");
-	P.readFile("/opt/share/data.txt");	
-
+	    P.readFile("/opt/share/data.txt");	
+        
+        MPI_Barrier(MPI_COMM_WORLD);
         double exe_time = omp_get_wtime();
         // Execute GA    
         P.GA_Evolution(generation);
@@ -905,14 +920,14 @@ int main(int argc, char* argv[]) {
             cout << "Best solution among nodes " << best_sol << endl;
         
 
-        cout << "XXXXXXXXXXXXXXXXXXXXXXX" << endl;
-        cout << "Computing time ga: "<< exe_time - com_time << endl;
-        cout << "Communication time ga: "<< com_time << endl;
-        cout << "XXXXXXXXXXXXXXXXXXXXXXX" << endl;
+            cout << "XXXXXXXXXXXXXXXXXXXXXXX" << endl;
+            cout << "Computing time ga: "<< exe_time - com_time << endl;
+            cout << "Communication time ga: "<< com_time << endl;
+            cout << "XXXXXXXXXXXXXXXXXXXXXXX" << endl;
 
-        cout << "Test parameters: machines " << numMachine << " tasks " << numTask
-             << " population size " << sizePop << " generations " << generation
-             << " Mutation rate: " << rateMutan << endl;
+            cout << "Test parameters: machines " << numMachine << " tasks " << numTask
+                 << " population size " << sizePop << " generations " << generation
+                 << " Mutation rate: " << rateMutan << endl;
         }
         avarage_exe_time += exe_time;
         avarage_com_time += com_time;
